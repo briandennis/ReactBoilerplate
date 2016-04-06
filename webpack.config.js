@@ -2,9 +2,9 @@ const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 
 module.exports = {
-  context: `${__dirname}/js`,
+  context: `${__dirname}`,
   devtool: debug ? 'inline-sourcemap' : null,
-  entry: './main.js',
+  entry: './src/app.js',
   module: {
     loaders: [
       {
@@ -20,7 +20,7 @@ module.exports = {
     ],
   },
   output: {
-    path: `${__dirname}/../build/`,
+    path: `${__dirname}/build`,
     filename: 'bundle.min.js',
   },
   plugins: debug ? [] : [
